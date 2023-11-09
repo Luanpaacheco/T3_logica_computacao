@@ -3,8 +3,10 @@
 avo(X,Y) :- pai(X,Z), pai(Z,Y).
 
 irmao(X,Y) :- pai(Z,X), pai(Z,Y), X \= Y.
+irmao(X,Y) :- mae(Z,X), mae(Z,Y), X \= Y.
 
 casas_relacionadas(Z,Y) :- casa(W,Y), casa(X,Z),casado(X,W) Z\=Y.
+
 descendentes(X,Y) :- pai(Z,X), pai(Z,Y), X \= Y.
 
 
